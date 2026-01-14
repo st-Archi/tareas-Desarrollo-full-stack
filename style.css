@@ -1,0 +1,215 @@
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Para que los bordes no peguen */
+}
+
+body {
+    background: #D1D1D1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header, .main, footer {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+article {
+    overflow: hidden; /* Esto obliga al cuadro blanco a estirarse para envolver a la imagen */
+    clear: both;      /* Asegura que un artículo no se meta en el espacio del otro */
+}
+
+/* Identidad y logo */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.slogan {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 5px;
+}
+
+.header-info {
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+    border-top: 4px solid #f2b705;
+    margin: 15px 0;
+}
+
+/* Navegacion y menu */
+header nav {
+    background: #333333;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header nav ul li {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+header nav ul li a {
+    padding: 15px 20px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    background: #FFCD00;
+}
+
+/* Cuerpo principal en movil */
+.main {
+    display: flex;
+    flex-direction: column-reverse; /* El sidebar sale arriba */
+    gap: 20px;
+}
+
+.main .articles article {
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+aside {
+    background: #F2B705;
+    padding: 20px;
+    border-left: 8px solid #231f20;
+}
+
+/* Titulos y espacios */
+h1, h2, h3, h4, h5, h6{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+article h2:first-child {
+    margin-top: 0; /* Para que el primer titulo no flote */
+}
+
+.img-flotante, .img-derecha {
+    width: 100%; /* Imagenes grandes en el celular */
+    margin-bottom: 15px;
+    border: 3px solid #f2b705;
+}
+
+/* Esto separa el párrafo antes de la galería */
+.articles article p {
+    margin-bottom: 30px; /* Ajusta el número según cuánto espacio quieras */
+}
+
+/* separar directamente el contenedor de las fotos */
+.galeria-productos {
+    margin-top: 40px; 
+}
+
+/* Form de contacto */
+form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-left: 5px solid #f2b705;
+    margin-top: 10px; /* Separacion con el titulo de arriba */
+}
+
+input, textarea {
+    width: 100%;       /* Ocupa todo el ancho disponible */
+    max-width: 100%;   /* No permite que se salga del borde */
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: block;    /* Evita espacios extraños */
+}
+
+textarea {
+    min-height: 100px; /* Altura minima para que se vea bien */
+    resize: vertical;  /* Solo permite estirarlo hacia abajo, no hacia los lados */
+}
+
+button[type="submit"] {
+    background: #f2b705;
+    color: #231f20;
+    font-weight: bold;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    text-transform: uppercase; /* Se ve mas industrial en mayusculas */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+td, th {
+    border: 2px solid black;
+    padding: 8px;
+}
+
+/* Pie de pagina */
+footer {
+    background: #333333;
+    color: #b8b8b8;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Cambios para pantallas grandes */
+
+/* Estilo para tabletas */
+@media screen and (min-width: 600px) {
+    .img-flotante {
+    float: left;
+    width: 18%;
+    height: auto;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    border: 3px solid #f2b705;
+}
+}
+
+/* Estilo para computadoras */
+@media screen and (min-width: 800px) {
+    .main {
+        flex-direction: row; /* El sidebar se mueve a la derecha */
+        align-items: flex-start; /* Alinea los techos del aside y los articulos */
+    }
+    .main .articles {
+        flex: 3;/* Los articulos ocupan mas espacio */
+    }
+    aside {
+        flex: 0 0 250px;
+        height: fit-content;
+    }
+
+    .img-flotante {
+    float: left;/* Hace que la imagen se mueva a la izquierda y el texto suba */
+    width: 100px;/*no ocupe toda la pantalla */
+    height: auto;
+    margin-right: 20px; /*Espacio entre la imagen y el texto a su derecha */
+    margin-bottom: 15px; /* Espacio con el texto que quede abajo */
+    border: 3px solid #f2b705; /*borde amarillo tipo industrial */
+}
+
+/* Si quieres una que flote a la derecha */
+.img-derecha {
+    float: right;
+    width: 250px;
+    height: auto;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    border: 3px solid #f2b705; /*borde amarillo tipo industrial */
+}
+}
